@@ -1,7 +1,8 @@
-#Overview
+# Overview of Real-Time Data Pipeline Structures
 
-Type				                Mechanism		          Memory			          Concurrency			          Blocking		Used for
-Atomic Queue (SPSC)		      Lock-free		          Dynamic			          1P + 1C				            N			      Real-time, fastest path
-Blocking Queue (SPSC)		    Mutex + CondVar		    Dynamic or pooled	    1P + 1C				            Y			      General use, safe delivery
-Atomic Ring Buffer (SPSC)	  Lock-free		          Fixed/static		      1P + 1C				            N			      High-frequency streams
-Blocking Ring Buffer		    Mutex + CondVar		    Fixed/static		      1P + N C or M P + N C		  Y			      Real-time with correctness
+| **Type**                   | **Mechanism**        | **Memory**            | **Concurrency**           | **Blocking** | **Used For**                       |
+|----------------------------|----------------------|------------------------|----------------------------|--------------|------------------------------------|
+| **Atomic Queue (SPSC)**    | Lock-free            | Dynamic                | 1 Producer + 1 Consumer    |    No         | Real-time, fastest path            |
+| **Blocking Queue (SPSC)**  | Mutex + CondVar      | Dynamic or pooled      | 1 Producer + 1 Consumer    |    Yes        | General use, safe delivery         |
+| **Atomic Ring Buffer (SPSC)** | Lock-free         | Fixed / Static         | 1 Producer + 1 Consumer    |    No         | High-frequency, low-latency streams|
+| **Blocking Ring Buffer**   | Mutex + CondVar      | Fixed / Static         | 1P + N Consumers or M + N  |    Yes        | Real-time with correctness         |
