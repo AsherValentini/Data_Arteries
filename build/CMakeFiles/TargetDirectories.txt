@@ -1,0 +1,3 @@
+/home/asher/snap_chat_prep/Data_Arteries/build/CMakeFiles/prog.dir
+/home/asher/snap_chat_prep/Data_Arteries/build/CMakeFiles/edit_cache.dir
+/home/asher/snap_chat_prep/Data_Arteries/build/CMakeFiles/rebuild_cache.dir
