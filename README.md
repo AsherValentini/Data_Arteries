@@ -1,4 +1,4 @@
-## 🔄 Data Pipeline Architecture Comparison
+## Data Pipeline Architecture Comparison
 
 | Feature              | Blocking Queue + Shared Ptr + Reuse Pool       | Lock-Free Ring Buffer + Raw Data + Stack Memory |
 |----------------------|--------------------------------------------------|--------------------------------------------------|
@@ -13,7 +13,7 @@
 
 **Choose Blocking Queue When...**
 - You need shared ownership across threads
-- You want easy, RAII-safe shutdown handling
+- You want easy, RAII-safe shutdown handling    
 - You’re willing to block producers or consumers
 - You expect dynamic producer/consumer topologies
 
